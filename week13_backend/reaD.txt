@@ -1,0 +1,36 @@
+1.  Creating a connection pool via Prisma accelerate at the back end as the first step
+
+2 . You have to put the actual database url from the avn or neon tech, in the .env file as DATABASE_URL 
+because your cli command line prompt from the terminal will take only those database not connexion 
+pool so mention the database url as the real database url, to do migration work 
+
+3 . So you have to paste your connection poll url in the wrangler.toml file because only Wrangler
+ is related to cloud flare, which compile your code so you have to put the connection pool url here as
+   [vars] DATABASE_URL="connection pool url" 
+
+4. Wranglers allows You to Store the important credentials like the database url, for suppose you can actually
+ store the pool connection string in the database url in the wrangler and when you have to showcase it in the
+  index.ts you can just mention the env.database then it can pull it & can understand it is a database url.
+  important code in the Wrangler it is supposed to be a in wrangler because it is a runtime characteristics 
+  for the cloud player 
+
+
+5. Okay after completion of your migration I mean 
+        npx prisma migrate dev --name  (your migration name) 
+
+you have to get the auto generative clients and here's the catch generally we can run the command as
+        npx prisma generate 
+
+ and it will generate the automatic client for us but right now we are in a cloud flare so we have to be
+ maintain the minimum size of the file so here you have to use the code as
+         npx prisma generate --no-engine 
+
+so what it will do is it can reduce the size of the modules I can say so you have to use this command if 
+you are working in a cloud player probably other database society
+
+
+
+
+6.  Since we have generated the clients via --no-engine method we have to instal an extension as accelerated
+ which will work which will work to get the automated clients to work in a correct manner
+        npm install @prisma/extension-accelerate
