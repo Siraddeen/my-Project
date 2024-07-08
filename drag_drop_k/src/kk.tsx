@@ -70,7 +70,7 @@ const KanbanBoard: React.FC = () => {
 
   return (
     <>
-      <div className=" bg-gradient-to-b from-orange-100 to-green-200 mt-5 h-1/3 ">
+      <div className=" bg-gradient-to-b from-orange-100 to-green-200 mt-5   ">
         <div className="flex items-center justify-center p-2.5">
           <input
             type="text"
